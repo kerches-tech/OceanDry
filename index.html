@@ -66,10 +66,7 @@
                                   </ul>
                               </li>
                               
-                              <li class="has-dropdown">
-                                <a href="products.html">OUR PRODUCTS <span></span></a>
-                                
-                              </li>
+                               <li><a href="products.html">OUR PRODUCTS <span></span></a>
 
                               <li><a href="vendors.html">VENDORS <span></span></a>
                                
@@ -968,6 +965,25 @@
    target="_blank">
     <i class="fa-brands fa-whatsapp"></i>
 </a>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Find all links inside your mobile/offcanvas menu
+    const mobileLinks = document.querySelectorAll('.vl-offcanvas-menu a, .mobile-menu a');
+    
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            
+            // If the link is a real page (not just '#' or a submenu toggle)
+            if (href && href !== '#' && !href.startsWith('javascript')) {
+                // Force the browser to go to the page
+                window.location.href = href;
+            }
+        });
+    });
+});
+</script>
 
 </body>
 </html>
