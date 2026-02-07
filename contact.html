@@ -228,17 +228,17 @@
         <div class="row align-items-center">
             <div class="col-lg-6">
                 <div class="heading1">
-                    <h5 data-aos="zoom-in" data-aos-duration="900"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                    <h5 data-aos="zoom-in" data-aos-duration="900"><svg  xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
                     <path d="M9.45001 17.8772C14.2115 17.6442 18 13.7338 18 8.94408C18 7.4743 17.6433 6.08732 17.0111 4.86399C14.4764 6.3183 13.2091 7.04546 12.2507 8.02546C11.1061 9.19582 10.2724 10.6308 9.82481 12.201C9.45001 13.5159 9.45001 14.9697 9.45001 17.8772Z" fill="#FB8500"/>
                     <path d="M8.55001 17.8772C3.78851 17.6442 0 13.7338 0 8.94408C0 7.47429 0.356744 6.08731 0.988876 4.86398C3.52358 6.3183 4.79093 7.04546 5.74937 8.02547C6.89397 9.19583 7.72761 10.6308 8.17521 12.2011C8.55001 13.5159 8.55001 14.9697 8.55001 17.8772Z" fill="#FB8500"/>
                     <path d="M1.43959 4.08981C3.97405 5.54399 5.24127 6.27107 6.57492 6.60594C8.16664 7.00559 9.83338 7.00559 11.4251 6.60594C12.7587 6.27108 14.026 5.54399 16.5604 4.08982C14.9571 1.62862 12.1699 0 9 0C5.8301 0 3.04295 1.62862 1.43959 4.08981Z" fill="#FB8500"/>
-                    </svg> Contact Us</h5>
+                    </svg> Connect with Us</h5>
                     <div class="space16"></div>
-                    <h2 data-aos="zoom-in" data-aos-duration="1000">Let’s Work Together The  Achieve Your Goals</h2>
+                    <h2 data-aos="zoom-in" data-aos-duration="1000">Let’s Build a Global Taste Connection</h2>
                     <div class="space16"></div>
-                    <p>At Staffx, we’re dedicated to connecting talented individuals with exceptional job opportunities. Whether you’re  employer seeking the perfect candidate or a job seeker looking for next.</p>
+                    <p>At OceanDry, we’re dedicated to bridging the gap between premium regional producers and the global market. Whether you’re a vendor looking to showcase your quality products to the world or a customer seeking the authentic, wood-smoked freshness of the tropics, we are here to deliver.</p>
                     <div class="space16"></div>
-                    <p>You can contact us via phone at or email us at we look forward to partnering with you and making your staffing experience.</p>
+                    <p>You can reach us via phone at +44 759 289 1611 or email us at support@OceanDry.com. We look forward to partnering with you and bringing the best of our harvest to your doorstep.</p>
                     <div class="space32"></div>
                     <ul class="contact-social">
                         <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
@@ -434,6 +434,48 @@
 <script src="assets/js/slick-slider.js"></script>
 <script src="assets/js/circle-progress.js"></script>
 <script src="assets/js/main.js"></script>
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/1234567890" 
+   style="
+        position: fixed;
+        width: 60px;
+        height: 60px;
+        bottom: 20px;
+        left: 20px;
+        background-color: #25D366;
+        color: white;
+        border-radius: 50%;
+        text-align: center;
+        font-size: 30px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+   "
+   target="_blank">
+    <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Find all links inside your mobile/offcanvas menu
+    const mobileLinks = document.querySelectorAll('.vl-offcanvas-menu a, .mobile-menu a');
+    
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            
+            // If the link is a real page (not just '#' or a submenu toggle)
+            if (href && href !== '#' && !href.startsWith('javascript')) {
+                // Force the browser to go to the page
+                window.location.href = href;
+            }
+        });
+    });
+});
+</script>
 
 </body>
 </html>
