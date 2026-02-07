@@ -236,6 +236,39 @@
     .search-wrapper button:active {
         transform: scale(0.98);
     }
+    /* Mobile Responsive Search Fix */
+@media (max-width: 576px) {
+    .search-wrapper {
+        flex-direction: column; /* Stack input and button vertically */
+        border-radius: 20px;    /* Less rounded corners for stacked look */
+        padding: 15px;
+        gap: 10px;
+        background: transparent; /* Makes it look cleaner on mobile */
+        box-shadow: none;        /* Remove shadow from container */
+        border: none;
+    }
+
+    .search-wrapper i.fa-magnifying-glass {
+        display: none; /* Hide icon inside input to save space */
+    }
+
+    .search-wrapper input {
+        background: #fff !important;
+        border: 1px solid #ddd !important;
+        border-radius: 10px;
+        width: 100%;
+        margin-bottom: 5px;
+        text-align: center; /* Better UX for mobile */
+    }
+
+    .search-wrapper button {
+        width: 100%;       /* Full width button */
+        justify-content: center;
+        border-radius: 10px;
+        padding: 12px;
+        font-size: 16px;
+    }
+}
 </style>
 
 <div class="service7 sp2">
@@ -250,9 +283,9 @@
                    <div class="search-wrapper">
     <i class="fa-solid fa-magnifying-glass"></i>
     <input type="text" id="productInput" placeholder="What are you looking for today?">
-    <button type="button" id="productBtn">
-        Search <span><i class="fa-solid fa-arrow-right"></i></span>
-    </button>
+   <button type="button" id="productBtn">
+    Search <i class="fa-solid fa-arrow-right"></i>
+</button>
 </div>
                 </div>
             </div>
