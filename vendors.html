@@ -1,10 +1,15 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Ocean Dry </title>
+      <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>OceanDry | Premium African Food Exports & Global Logistics</title>
+     <meta name="title" content="OceanDry | Premium African Food Exports & Global Logistics">
+     <meta name="description" content="OceanDry connects high-quality African food producers with global markets. Exporting premium dried seafood, spices, and grains with international quality standards.">
+     <meta name="keywords" content="African food export, dried catfish, wholesale spices Nigeria, global food logistics, OceanDry, food supply chain">
+     <meta name="author" content="OceanDry">
 
      <!--=====FAB ICON=======-->
     <link rel="shortcut icon" href="assets/img/images/logo.png" type="image/x-icon">
@@ -62,17 +67,13 @@
                                 <a href="#">ABOUT <span><i class="fa-solid fa-angle-down d-lg-inline d-none"></i></span></a>
                                   <ul class="sub-menu">
                                       <li><a href="about us.html">About Us</a></li>
-                                      <li><a href="team.html">Our Team</a></li>
-                                      <li><a href="vendor.html">Become a Vendor</a></li>
+                                      <li><a href="vendors form.html">Become a Vendor</a></li>
                                   </ul>
                               </li>
                               
-                              <li class="has-dropdown">
-                                <a href="products.html">OUR PRODUCTS <span></span></a>
-                                
-                              </li>
+                               <li><a href="products.html">OUR PRODUCTS <span></span></a>
 
-                              <li><a href="vendors.html">VENDORS <span></span></a>
+                              <li><a href="vendors.html">OUR VENDORS <span></span></a>
                                
                               </li>
                               <li><a href="contact.html">CONTACT US <span></span></a>
@@ -87,7 +88,7 @@
               <div class="col-lg-2 col-md-6 col-6">
                 <div class="vl-hero-btn d-none d-lg-block text-end">
                   <div class="hero-btn1">
-                    <a href="contact.html" class="vl-btn2">Get Started <span><i class="fa-solid fa-arrow-right"></i></span></a>
+                    <a href="contact.html" class="vl-btn2">Talk to Us <span><i class="fa-solid fa-arrow-right"></i></span></a>
                   </div>
                 </div>
                   <div class="vl-header-action-item d-block d-lg-none">
@@ -228,90 +229,115 @@
 </section>
 
 <script>
-    // 1. DATA
+    // 1. DATA (Kept your original structure)
 const vendors = [
     { 
         name: "OceanDry Leeds Central", 
         city: "LEEDS", 
         prefix: "LS", 
         address: "42 Skelton Road, Leeds, UK",
-        mapUrl: "https://goo.gl/maps/example1" // Your Google Maps Link
+        mapUrl: "https://www.google.com/maps/search/?api=1&query=Abuja+Nigeria" 
+    },
+    { 
+        name: "OceanDry Hull Central", 
+        city: "Hull", 
+        prefix: "Hu", 
+        address: "42 Skelton Road, Hull, UK",
+        mapUrl: "https://www.google.com/maps/search/?api=1&query=Abuja+Nigeria" 
     },
     { 
         name: "OceanDry Manchester Hub", 
         city: "MANCHESTER", 
         prefix: "M", 
         address: "45 Market Road, Manchester",
-        mapUrl: "https://goo.gl/maps/example2" 
+        mapUrl: "https://www.google.com/maps/search/?api=1&query=Abuja+Nigeria" 
     }
 ];
 
-    const resultsGrid = document.getElementById('myGrid');
+const resultsGrid = document.getElementById('myGrid');
 
-    // 3. RENDER FUNCTION WITH ANIMATION DELAY
-    function displayVendors(dataList) {
-        resultsGrid.innerHTML = '';
-        
-        if (dataList.length === 0) {
-            resultsGrid.innerHTML = '<div class="col-12 text-center py-5"><h3>No vendors found.</h3></div>';
-            return;
-        }
-dataList.forEach((v, index) => {
-    const delay = index * 0.1;
+// 3. RENDER FUNCTION
+function displayVendors(dataList) {
+    resultsGrid.innerHTML = '';
+    
+    if (dataList.length === 0) {
+        resultsGrid.innerHTML = '<div class="col-12 text-center py-5"><h3 style="color: #666;">No vendors found in this area.</h3></div>';
+        return;
+    }
 
-    resultsGrid.innerHTML += `
-        <div class="col-md-6 col-lg-4 mb-4">
-            <div class="vendor-card" style="
-                border-top: 4px solid #2D2363;
-                padding: 25px; 
-                border-radius: 15px; 
-                background: #fff; 
-                box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-                animation: fadeInUp 0.5s ease forwards;
-                animation-delay: ${delay}s;
-                opacity: 0;
-                height: 100%;
-                display: flex;
-                flex-direction: column;
-            ">
-                <div style="flex-grow: 1;">
-                    <h4 style="color: #2D2363; font-weight: 700; margin-bottom: 10px;">${v.name}</h4>
-                    <p style="font-size: 14px; color: #666;">
-                        <i class="fa-solid fa-location-dot"></i> ${v.address}
-                    </p>
+    dataList.forEach((v, index) => {
+        const delay = index * 0.1;
+        resultsGrid.innerHTML += `
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="vendor-card" style="
+                    border-top: 4px solid #2D2363;
+                    padding: 25px; 
+                    border-radius: 15px; 
+                    background: #fff; 
+                    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+                    animation: fadeInUp 0.5s ease forwards;
+                    animation-delay: ${delay}s;
+                    opacity: 0;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                ">
+                    <div style="flex-grow: 1;">
+                        <h4 style="color: #2D2363; font-weight: 700; margin-bottom: 10px; font-family: 'Plus Jakarta Sans', sans-serif;">${v.name}</h4>
+                        <p style="font-size: 14px; color: #666; font-family: 'Plus Jakarta Sans', sans-serif;">
+                            <i class="fa-solid fa-location-dot" style="color: #28a745;"></i> ${v.address}
+                        </p>
+                    </div>
+                    
+                    <div style="margin-top: 20px;">
+                        <a href="${v.mapUrl}" 
+                           target="_blank" 
+                           class="btn w-100" 
+                           style="background: #2D2363; color: white; border-radius: 8px; font-weight: 600; padding: 12px; transition: 0.3s; text-align: center; text-decoration: none; display: block; font-family: 'Plus Jakarta Sans', sans-serif;">
+                            View on Map
+                        </a>
+                    </div>
                 </div>
+            </div>`;
+    });
+}
+
+// 4. IMPROVED SEARCH LOGIC
+function startSearch() {
+    const inputField = document.getElementById('myInput');
+    // Convert to lowercase and remove spaces for a "fuzzy" match
+    const term = inputField.value.toLowerCase().trim();
+    
+    resultsGrid.style.opacity = '0.5';
+    
+    setTimeout(() => {
+        if (term === "") {
+            displayVendors(vendors); // Show all if empty
+        } else {
+            const filtered = vendors.filter(v => {
+                const nameMatch = v.name.toLowerCase().includes(term);
+                const cityMatch = v.city.toLowerCase().includes(term);
+                const prefixMatch = v.prefix.toLowerCase().startsWith(term);
                 
-                <div style="margin-top: 20px;">
-                    <a href="${v.mapUrl}" 
-                       target="_blank" 
-                       class="btn w-100" 
-                       style="background: #2D2363; color: white; border-radius: 8px; font-weight: 600; padding: 12px; transition: 0.3s; text-align: center; text-decoration: none; display: block;">
-                       View on Map
-                    </a>
-                </div>
-            </div>
-        </div>`;
-});
-    }
-
-    // 4. THE SEARCH LOGIC
-    function startSearch() {
-        const inputField = document.getElementById('myInput');
-        const term = inputField.value.toUpperCase().trim();
-        
-        // Add a small "refresh" feel to the grid when searching
-        resultsGrid.style.opacity = '0.5';
-        
-        setTimeout(() => {
-            const filtered = (term === "") ? vendors.slice(0, 4) : vendors.filter(v => v.city.includes(term) || term.startsWith(v.prefix));
+                return nameMatch || cityMatch || prefixMatch;
+            });
             displayVendors(filtered);
-            resultsGrid.style.opacity = '1';
-        }, 200); // 200ms delay makes the transition feel smoother
+        }
+        resultsGrid.style.opacity = '1';
+    }, 200);
+}
+
+// Event Listeners
+document.getElementById('myBtn').onclick = startSearch;
+
+// Allow "Enter" key to trigger search too
+document.getElementById('myInput').addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') {
+        startSearch();
     }
+});
 
-    document.getElementById('myBtn').onclick = startSearch;
-
-    window.onload = () => displayVendors(vendors.slice(0, 4));
+window.onload = () => displayVendors(vendors);
 </script>
 <!--===== CTA AREA STARTS =======-->
 <div style="background: #2D2363;" class="cta4-aection-area sp4">
@@ -328,7 +354,7 @@ dataList.forEach((v, index) => {
                 <p>We deliver premium regional staples to the global market. By combining traditional methods with modern logistics</p>
                 <div class="space24"></div>
                 <div class="btn-area1">
-                    <a href="contact.html" class="ctn-btn4">Become a Vendor <span><i class="fa-solid fa-arrow-right"></i></span></a>
+                    <a href="vendors form.html" class="ctn-btn4">Become a Vendor <span><i class="fa-solid fa-arrow-right"></i></span></a>
                 </div>
               </div>
             </div>
@@ -345,7 +371,7 @@ dataList.forEach((v, index) => {
                             <div class="text">
                                 <p>Call Us 24/7</p>
                                 <div class="space16"></div>
-                                <a href="tel:+1234567890">0759 289 1611</a>
+                                <a href="tel:+44 759 289 1611">0759 289 1611</a>
                             </div>
                         </div>
                     </div>
@@ -398,9 +424,9 @@ dataList.forEach((v, index) => {
           <h3>Quick Links</h3>
           <ul>
             <li><a href="about us.html">About Us</a></li>
-            <li><a href="service.html">Our Products</a></li>
-            <li><a href="service.html">Our Vendors</a></li>
-            <li><a href="blog.html">Become a Vendor</a></li>
+            <li><a href="products.html">Our Products</a></li>
+            <li><a href="vendors.html">Our Vendors</a></li>
+            <li><a href="vendors form.html">Become a Vendor</a></li>
           </ul>
         </div>
       </div>
@@ -439,19 +465,52 @@ dataList.forEach((v, index) => {
         </div>
       </div>
 
-      <div class="col-lg col-md-6">
-        <div class="space30 d-lg-none d-block"></div>
-        <div class="footer-widget-area">
-          <h3>Subscribe Newsletter</h3>
-          <div class="space24"></div>
-            <form>
-                <input style="background: #2D2363;" type="text" placeholder="Your Email Address">
-                <div class="space16"></div>
-                <button style="background: #2D2363;" class="vl-btn4" type="submit">subscribe <span><i class="fa-solid fa-arrow-right"></i></span></button>
-            </form>
-        </div>
-      </div>
+     <div class="col-lg col-md-6">
+    <div class="space30 d-lg-none d-block"></div>
+    <div class="footer-widget-area">
+        <h3>Subscribe Newsletter</h3>
+        <div class="space24"></div>
+        
+        <form action="https://api.web3forms.com/submit" method="POST" id="footerNewsletter">
+            <input type="hidden" name="access_key" value="aa0e456c-6b19-4e39-bea4-d69ea3a56cab">
+            
+            <input type="hidden" name="subject" value="New Newsletter Subscription">
+            <input type="hidden" name="from_name" value="OceanDry Newsletter">
+            
+            <input type="email" name="email" placeholder="Your Email Address" required 
+                   style="background: #2D2363; border: 1px solid rgba(255,255,255,0.1); color: #fff; width: 100%; padding: 12px 15px; border-radius: 8px; outline: none;">
+            
+            <div class="space16"></div>
+            
+            <button class="vl-btn4" type="submit" id="footerSubBtn" 
+                    style="background: #28a745; color: #fff; width: 100%; border: none; padding: 12px; border-radius: 8px; cursor: pointer; font-weight: 700;">
+                Subscribe <span id="footerBtnIcon"><i class="fa-solid fa-arrow-right"></i></span>
+            </button>
+            
+            <p id="footerSubMsg" style="display:none; color: #28a745; font-size: 14px; margin-top: 10px; font-weight: 600;">
+                <i class="fa-solid fa-circle-check"></i> Welcome to the club!
+            </p>
+        </form>
     </div>
+</div>
+
+<script>
+    // Handles the "Sending" state and success message
+    const footerForm = document.getElementById('footerNewsletter');
+    const footerBtn = document.getElementById('footerSubBtn');
+    const footerMsg = document.getElementById('footerSubMsg');
+
+    footerForm.addEventListener('submit', function(e) {
+        footerBtn.innerHTML = "Joining...";
+        footerBtn.style.opacity = "0.7";
+        
+        // Form submits normally, but we show a nice UI update
+        setTimeout(() => {
+            footerBtn.style.display = 'none';
+            footerMsg.style.display = 'block';
+        }, 1000);
+    });
+</script>
     <div class="space48"></div>
     <div class="col-lg-12">
       <div class="copyright-area">
@@ -501,6 +560,26 @@ dataList.forEach((v, index) => {
    target="_blank">
     <i class="fa-brands fa-whatsapp"></i>
 </a>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Find all links inside your mobile/offcanvas menu
+    const mobileLinks = document.querySelectorAll('.vl-offcanvas-menu a, .mobile-menu a');
+    
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            
+            // If the link is a real page (not just '#' or a submenu toggle)
+            if (href && href !== '#' && !href.startsWith('javascript')) {
+                // Force the browser to go to the page
+                window.location.href = href;
+            }
+        });
+    });
+});
+</script>
+
 
 </body>
 </html>
