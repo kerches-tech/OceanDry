@@ -187,42 +187,40 @@
 
                     <div class="row mb-5 text-center g-3">
                         <div class="col-md-4">
-                            <div class="contact-info-box" style="padding: 20px; background: #f8fafc; border-radius: 20px; border: 1px solid #f0f0f0;">
-                                <i class="fa-solid fa-envelope" style="color: #2D2363; font-size: 24px; mb-2;"></i>
-                                <h6 style="font-weight: 700; margin-top: 10px;">Email Us</h6>
-                                <a href="mailto:hello@oceandry.com" style="text-decoration: none; color: #555; font-size: 14px;">hello@oceandry.com</a>
-                            </div>
+                            <a href="mailto:hello@oceandry.com" style="text-decoration: none; display: block;">
+                                <div class="contact-info-box h-100" style="padding: 25px 20px; background: #f8fafc; border-radius: 20px; border: 1px solid #f0f0f0; transition: 0.3s ease;">
+                                    <i class="fa-solid fa-envelope" style="color: #2D2363; font-size: 26px; margin-bottom: 12px;"></i>
+                                    <h6 style="font-weight: 800; color: #1a1a1a; margin-bottom: 5px;">Email Us</h6>
+                                    <span style="color: #555; font-size: 14px; word-break: break-all;">hello@oceandry.com</span>
+                                </div>
+                            </a>
                         </div>
+                        
                         <div class="col-md-4">
-                            <div class="contact-info-box" style="padding: 20px; background: #f8fafc; border-radius: 20px; border: 1px solid #f0f0f0;">
-                                <i class="fa-solid fa-phone" style="color: #2D2363; font-size: 24px;"></i>
-                                <h6 style="font-weight: 700; margin-top: 10px;">Call or WhatsApp</h6>
-                                <a href="tel:+2348000000000" style="text-decoration: none; color: #555; font-size: 14px;">+234 800 000 0000</a>
-                            </div>
+                            <a href="tel:+2348000000000" style="text-decoration: none; display: block;">
+                                <div class="contact-info-box h-100" style="padding: 25px 20px; background: #f8fafc; border-radius: 20px; border: 1px solid #f0f0f0; transition: 0.3s ease;">
+                                    <i class="fa-solid fa-phone-volume" style="color: #2D2363; font-size: 26px; margin-bottom: 12px;"></i>
+                                    <h6 style="font-weight: 800; color: #1a1a1a; margin-bottom: 5px;">Call or WhatsApp</h6>
+                                    <span style="color: #555; font-size: 14px;">+234 800 000 0000</span>
+                                </div>
+                            </a>
                         </div>
+                        
                         <div class="col-md-4">
-                            <div class="contact-info-box" style="padding: 20px; background: #f8fafc; border-radius: 20px; border: 1px solid #f0f0f0;">
-                                <i class="fa-solid fa-location-dot" style="color: #2D2363; font-size: 24px;"></i>
-                                <h6 style="font-weight: 700; margin-top: 10px;">Office Location</h6>
-                                <p style="color: #555; font-size: 14px; margin: 0;">123 Business Way, Abuja, NG</p>
-                            </div>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Abuja+Nigeria" target="_blank" style="text-decoration: none; display: block;">
+                                <div class="contact-info-box h-100" style="padding: 25px 20px; background: #f8fafc; border-radius: 20px; border: 1px solid #f0f0f0; transition: 0.3s ease;">
+                                    <i class="fa-solid fa-location-dot" style="color: #2D2363; font-size: 26px; margin-bottom: 12px;"></i>
+                                    <h6 style="font-weight: 800; color: #1a1a1a; margin-bottom: 5px;">Office Location</h6>
+                                    <span style="color: #555; font-size: 14px;">Abuja, Nigeria</span>
+                                </div>
+                            </a>
                         </div>
-                    </div>
-
-                    <div id="contactSuccess" style="display: none; text-align: center; padding: 30px 0;">
-                        <div style="font-size: 50px; color: #28a745; margin-bottom: 15px;">
-                            <i class="fa-solid fa-paper-plane"></i>
-                        </div>
-                        <h3 style="font-weight: 700; color: #2D2363;">Message Sent Successfully!</h3>
-                        <p style="color: #555;">We'll get back to you at the email address provided very soon.</p>
                     </div>
 
                     <form action="https://api.web3forms.com/submit" method="POST" id="contactForm">
                         <input type="hidden" name="access_key" value="aa0e456c-6b19-4e39-bea4-d69ea3a56cab">
-                        <input type="hidden" name="subject" value="General Inquiry: OceanDry Contact Form">
-                        <input type="hidden" name="from_name" value="OceanDry Website">
                         <input type="hidden" name="replyto" value="%email%">
-
+                        
                         <div class="row">
                             <div class="col-md-6 mb-4">
                                 <div class="od-input-wrapper">
@@ -237,21 +235,12 @@
                                 </div>
                             </div>
                         </div>
-
-                        <div class="mb-4">
-                            <div class="od-input-wrapper">
-                                <label>Subject</label>
-                                <input type="text" name="msg_subject" placeholder="How can we help?">
-                            </div>
-                        </div>
-
                         <div class="mb-4">
                             <div class="od-input-wrapper">
                                 <label>Your Message <span style="color: #ff4d4d;">*</span></label>
                                 <textarea name="message" rows="5" placeholder="Write your message here..." required></textarea>
                             </div>
                         </div>
-
                         <button type="submit" class="od-action-btn" id="contactBtn">
                             <span id="contactBtnText">Send Message</span>
                             <i class="fa-solid fa-arrow-right ms-2"></i>
@@ -264,104 +253,27 @@
     </div>
 </section>
 
-<script>
-    const cForm = document.getElementById('contactForm');
-    const cSuccess = document.getElementById('contactSuccess');
-    const cBtnText = document.getElementById('contactBtnText');
-
-    cForm.addEventListener('submit', function(e) {
-        if (cForm.checkValidity()) {
-            cBtnText.innerHTML = "Sending...";
-            setTimeout(() => {
-                cForm.style.display = 'none';
-                cSuccess.style.display = 'block';
-                document.getElementById('contactFormContainer').scrollIntoView({ behavior: 'smooth' });
-            }, 800);
-        }
-    });
-</script>
-
 <style>
-    .oceandry-contact-area .oceandry-modern-card {
-        background: #ffffff;
-        padding: 60px;
-        border-radius: 32px;
-        box-shadow: 0 20px 50px rgba(45, 35, 99, 0.08);
-        border: 1px solid #f0f0f0;
+    /* Hover effects to show interactivity */
+    .contact-info-box:hover {
+        transform: translateY(-5px);
+        background: #ffffff !important;
+        border-color: #2D2363 !important;
+        box-shadow: 0 10px 25px rgba(45, 35, 99, 0.1);
     }
 
-    /* Info Boxes in Dark Mode */
-    html[data-theme="dark"] .contact-info-box {
-        background: #0f172a !important;
-        border-color: #334155 !important;
-    }
-    html[data-theme="dark"] .contact-info-box i { color: #ffffff !important; }
-    html[data-theme="dark"] .contact-info-box h6 { color: #ffffff !important; }
-    html[data-theme="dark"] .contact-info-box a, 
-    html[data-theme="dark"] .contact-info-box p { color: #cbd5e1 !important; }
+    /* Standard Styles (as before) */
+    .oceandry-modern-card { background: #ffffff; padding: 60px; border-radius: 32px; box-shadow: 0 20px 50px rgba(45, 35, 99, 0.08); border: 1px solid #f0f0f0; }
+    .od-input-wrapper label { display: block; font-weight: 700; color: #1a1a1a; margin-bottom: 8px; font-size: 14px; }
+    .od-input-wrapper input, .od-input-wrapper textarea { width: 100%; padding: 15px 20px; border-radius: 12px; border: 1px solid #e2e8f0; background: #f8fafc; outline: none; transition: 0.3s ease; }
+    .od-action-btn { width: 100%; background: #28a745; color: white; border: none; padding: 18px; border-radius: 14px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: 0.4s; }
 
-    .od-input-wrapper label {
-        display: block;
-        font-weight: 700;
-        color: #1a1a1a;
-        margin-bottom: 8px;
-        font-size: 14px;
-    }
-
-    .od-input-wrapper input, 
-    .od-input-wrapper textarea {
-        width: 100%;
-        padding: 15px 20px;
-        border-radius: 12px;
-        border: 1px solid #e2e8f0;
-        background: #f8fafc;
-        font-size: 15px;
-        outline: none;
-        transition: 0.3s ease;
-    }
-
-    .od-input-wrapper input:focus, 
-    .od-input-wrapper textarea:focus {
-        border-color: #2D2363;
-        background: #fff;
-        box-shadow: 0 0 0 4px rgba(45, 35, 99, 0.05);
-    }
-
-    .od-action-btn {
-        width: 100%;
-        background: #28a745;
-        color: white;
-        border: none;
-        padding: 18px;
-        border-radius: 14px;
-        font-weight: 700;
-        font-size: 17px;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: 0.4s;
-    }
-
-    .od-action-btn:hover {
-        background: #218838;
-        transform: translateY(-2px);
-        box-shadow: 0 10px 20px rgba(40, 167, 69, 0.2);
-    }
-
+    /* Dark Mode Compatibility */
+    html[data-theme="dark"] .contact-info-box { background: #0f172a !important; border-color: #334155 !important; }
+    html[data-theme="dark"] .contact-info-box:hover { background: #1e293b !important; border-color: #ffffff !important; }
+    html[data-theme="dark"] .contact-info-box h6, html[data-theme="dark"] .contact-info-box span { color: #ffffff !important; }
+    html[data-theme="dark"] .oceandry-modern-card { background: #1e293b !important; border-color: #334155 !important; }
     html[data-theme="dark"] .oceandry-contact-area { background: #0f172a !important; }
-    html[data-theme="dark"] .oceandry-contact-area .oceandry-modern-card { background: #1e293b !important; border-color: #334155 !important; }
-    html[data-theme="dark"] .oceandry-contact-area h2, 
-    html[data-theme="dark"] .oceandry-contact-area p,
-    html[data-theme="dark"] .oceandry-contact-area label { color: #ffffff !important; }
-    html[data-theme="dark"] .oceandry-contact-area input,
-    html[data-theme="dark"] .oceandry-contact-area textarea { background: #0f172a !important; border-color: #475569 !important; color: white; }
-
-    @media (max-width: 767px) {
-        .oceandry-contact-area .oceandry-modern-card { padding: 30px 20px; }
-        .od-heading { font-size: 32px; }
-        .contact-info-box { margin-bottom: 10px; }
-    }
 </style>
 
 
