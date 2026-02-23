@@ -144,7 +144,7 @@
 <!--===== HERO AREA STARTS =======-->
 <div class="inner-header-area"
      style="
-        background-image: url('assets/img/images/image15.jpg');
+        background-image: url('assets/img/images/image16.jpg');
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -225,117 +225,7 @@
     </div>
 </section>
 
-<script>
-    // 1. DATA (Kept your original structure)
-const vendors = [
-    { 
-        name: "OceanDry Leeds Central", 
-        city: "LEEDS", 
-        prefix: "LS", 
-        address: "42 Skelton Road, Leeds, UK",
-        mapUrl: "https://www.google.com/maps/search/?api=1&query=Abuja+Nigeria" 
-    },
-    { 
-        name: "OceanDry Hull Central", 
-        city: "Hull", 
-        prefix: "Hu", 
-        address: "42 Skelton Road, Hull, UK",
-        mapUrl: "https://www.google.com/maps/search/?api=1&query=Abuja+Nigeria" 
-    },
-    { 
-        name: "OceanDry Manchester Hub", 
-        city: "MANCHESTER", 
-        prefix: "M", 
-        address: "45 Market Road, Manchester",
-        mapUrl: "https://www.google.com/maps/search/?api=1&query=Abuja+Nigeria" 
-    }
-];
 
-const resultsGrid = document.getElementById('myGrid');
-
-// 3. RENDER FUNCTION
-function displayVendors(dataList) {
-    resultsGrid.innerHTML = '';
-    
-    if (dataList.length === 0) {
-        resultsGrid.innerHTML = '<div class="col-12 text-center py-5"><h3 style="color: #666;">No vendors found in this area.</h3></div>';
-        return;
-    }
-
-    dataList.forEach((v, index) => {
-        const delay = index * 0.1;
-        resultsGrid.innerHTML += `
-            <div class="col-md-6 col-lg-4 mb-4">
-                <div class="vendor-card" style="
-                    border-top: 4px solid #2D2363;
-                    padding: 25px; 
-                    border-radius: 15px; 
-                    background: #fff; 
-                    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-                    animation: fadeInUp 0.5s ease forwards;
-                    animation-delay: ${delay}s;
-                    opacity: 0;
-                    height: 100%;
-                    display: flex;
-                    flex-direction: column;
-                ">
-                    <div style="flex-grow: 1;">
-                        <h4 style="color: #2D2363; font-weight: 700; margin-bottom: 10px; font-family: 'Plus Jakarta Sans', sans-serif;">${v.name}</h4>
-                        <p style="font-size: 14px; color: #666; font-family: 'Plus Jakarta Sans', sans-serif;">
-                            <i class="fa-solid fa-location-dot" style="color: #28a745;"></i> ${v.address}
-                        </p>
-                    </div>
-                    
-                    <div style="margin-top: 20px;">
-                        <a href="${v.mapUrl}" 
-                           target="_blank" 
-                           class="btn w-100" 
-                           style="background: #2D2363; color: white; border-radius: 8px; font-weight: 600; padding: 12px; transition: 0.3s; text-align: center; text-decoration: none; display: block; font-family: 'Plus Jakarta Sans', sans-serif;">
-                            View on Map
-                        </a>
-                    </div>
-                </div>
-            </div>`;
-    });
-}
-
-// 4. IMPROVED SEARCH LOGIC
-function startSearch() {
-    const inputField = document.getElementById('myInput');
-    // Convert to lowercase and remove spaces for a "fuzzy" match
-    const term = inputField.value.toLowerCase().trim();
-    
-    resultsGrid.style.opacity = '0.5';
-    
-    setTimeout(() => {
-        if (term === "") {
-            displayVendors(vendors); // Show all if empty
-        } else {
-            const filtered = vendors.filter(v => {
-                const nameMatch = v.name.toLowerCase().includes(term);
-                const cityMatch = v.city.toLowerCase().includes(term);
-                const prefixMatch = v.prefix.toLowerCase().startsWith(term);
-                
-                return nameMatch || cityMatch || prefixMatch;
-            });
-            displayVendors(filtered);
-        }
-        resultsGrid.style.opacity = '1';
-    }, 200);
-}
-
-// Event Listeners
-document.getElementById('myBtn').onclick = startSearch;
-
-// Allow "Enter" key to trigger search too
-document.getElementById('myInput').addEventListener('keypress', function (e) {
-    if (e.key === 'Enter') {
-        startSearch();
-    }
-});
-
-window.onload = () => displayVendors(vendors);
-</script>
 <!--===== CTA AREA STARTS =======-->
 <div style="background: #2D2363;" class="cta4-aection-area sp4">
     <img src="assets/img/elements/elements9.png" alt="" class="elements9">
