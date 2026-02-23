@@ -476,4 +476,69 @@ $(window).on("load", function (event) {
 });
 })(jQuery);
 
+// Add this to your main.js
+document.addEventListener('DOMContentLoaded', function() {
+    const resultsGrid = document.getElementById('myGrid');
+    const searchBtn = document.getElementById('myBtn');
+    const inputField = document.getElementById('myInput');
+
+    // ONLY run the code if these elements exist on the page
+    if (resultsGrid && searchBtn && inputField) {
+        
+        const vendors = [
+            { name: "OceanDry Leeds Central", city: "LEEDS", prefix: "LS", address: "42 Skelton Road, Leeds, UK", mapUrl: "https://www.google.com/maps/search/?api=1&query=Abuja+Nigeria" },
+            { name: "OceanDry Hull Central", city: "Hull", prefix: "Hu", address: "42 Skelton Road, Hull, UK", mapUrl: "https://www.google.com/maps/search/?api=1&query=Abuja+Nigeria" },
+            { name: "OceanDry Manchester Hub", city: "MANCHESTER", prefix: "M", address: "45 Market Road, Manchester", mapUrl: "https://www.google.com/maps/search/?api=1&query=Abuja+Nigeria" },
+            { name: "OceanDry London East", city: "LONDON", prefix: "LN", address: "12 Commercial St, London", mapUrl: "#" }
+        ];
+
+        function displayVendors(dataList, isInitial = false) {
+            resultsGrid.innerHTML = '';
+            if (dataList.length === 0) {
+                resultsGrid.innerHTML = '<div class="col-12 text-center py-5"><h3 style="color: #666;">No vendors found.</h3></div>';
+                return;
+            }
+            const listToDisplay = isInitial ? dataList.slice(0, 3) : dataList;
+            listToDisplay.forEach((v, index) => {
+                const delay = index * 0.1;
+                resultsGrid.innerHTML += `
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="vendor-card" style="border-top: 4px solid #2D2363; padding: 25px; border-radius: 15px; background: #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.05); animation: fadeInUp 0.5s ease forwards; animation-delay: ${delay}s; opacity: 0; height: 100%; display: flex; flex-direction: column;">
+                            <div style="flex-grow: 1;">
+                                <h4 style="color: #2D2363; font-weight: 700; margin-bottom: 10px;">${v.name}</h4>
+                                <p style="font-size: 14px; color: #666;"><i class="fa-solid fa-location-dot" style="color: #28a745;"></i> ${v.address}</p>
+                            </div>
+                            <div style="margin-top: 20px;">
+                                <a href="${v.mapUrl}" target="_blank" class="btn w-100" style="background: #2D2363; color: white; border-radius: 8px; font-weight: 600; padding: 12px; text-align: center; text-decoration: none; display: block;">View on Map</a>
+                            </div>
+                        </div>
+                    </div>`;
+            });
+        }
+
+        function startSearch() {
+            const term = inputField.value.toLowerCase().trim();
+            resultsGrid.style.opacity = '0.5';
+            setTimeout(() => {
+                if (term === "") {
+                    displayVendors(vendors, true);
+                } else {
+                    const filtered = vendors.filter(v => 
+                        v.name.toLowerCase().includes(term) || 
+                        v.city.toLowerCase().includes(term) || 
+                        v.prefix.toLowerCase().startsWith(term)
+                    );
+                    displayVendors(filtered, false);
+                }
+                resultsGrid.style.opacity = '1';
+            }, 200);
+        }
+
+        searchBtn.onclick = startSearch;
+        inputField.addEventListener('keypress', (e) => { if (e.key === 'Enter') startSearch(); });
+
+        // Run the initial "Top 3" view
+        displayVendors(vendors, true);
+    }
+});
 
